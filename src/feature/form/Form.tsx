@@ -14,7 +14,7 @@ export function Form() {
  / #0bb783 - green
   // #d1e7fb - light blue text icon bg
   // #307ccc - dark blue text icon text
-  // light gray - #f2f1f6 background
+  // light gray - #c background
   // #f5f7fd - light gray icon bg
   // #b4b8c3 - light gray text
  */
