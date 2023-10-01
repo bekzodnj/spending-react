@@ -4,7 +4,7 @@ import { SpendingsList } from "./feature/spendings-list/SpendingsList";
 function App() {
   return (
     <>
-      <div className="mx-auto rounded-md bg-[#f2f1f6] px-10 py-4 sm:w-4/6">
+      <div className="mx-auto rounded-md bg-[#f2f1f6] p-4 sm:w-4/6 sm:px-10 sm:py-4">
         <Form />
         <hr />
         <SpendingsList />

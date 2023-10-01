@@ -24,8 +24,8 @@ export function SpendingCard({
   spending: { description, amount, currency, spent_at },
 }: ISpending) {
   return (
-    <div className="mb-1 mt-2 flex items-center justify-between rounded-lg border bg-white p-3 shadow-sm">
-      <div className="flex gap-3">
+    <div className="mb-1 mt-2 flex items-center justify-between gap-2 rounded-lg border bg-white p-3 shadow-sm">
+      <div className="flex gap-3" data-attribute="item-description">
         <div
           data-label="icon"
           className="inline-block self-start rounded-lg bg-[#d1e7fb] p-2 px-4 text-2xl font-normal text-[#307ccc]"
@@ -34,30 +34,39 @@ export function SpendingCard({
         </div>
 
         <div data-label="spending-info">
-          <h2 className="font-bold text-[#2e2e2e]">{description}</h2>
-          <p className="text-sm text-[#adadad]">
+          <h2 className="break-words text-xs font-bold text-[#2e2e2e] sm:text-base">
+            {description}
+          </h2>
+          <p className="text-xs text-[#adadad] sm:text-base">
             {getFormattedTime(spent_at)} -{" "}
             <span>{getFormattedDate(spent_at)}</span>
           </p>
         </div>
       </div>
 
-      <div className="flex items-center gap-2">
-        <div>
-          <p className="font-semibold">
+      <div
+        className="flex flex-col items-end gap-2 break-words sm:flex-row sm:items-center"
+        data-attribute="amount"
+      >
+        <div className="">
+          <p className="text-xs font-semibold sm:text-base">
             {getFormattedAmount(amount.toString(), currency)}
           </p>
         </div>
 
-        <Button>
-          <IconEdit width="1.2em" height="1.2em" />
-        </Button>
+        <div className="flex gap-1">
+          <Button>
+            <IconEdit width="1.2em" height="1.2em" />
+          </Button>
 
-        <Button
-          onClick={() => confirm(`Do you really want to delete ${description}`)}
-        >
-          <IconClose />
-        </Button>
+          <Button
+            onClick={() =>
+              confirm(`Do you really want to delete ${description}`)
+            }
+          >
+            <IconClose />
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -29,7 +29,7 @@ export function SpendingsList() {
 
   return (
     <section>
-      <div className="flex justify-between">
+      <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
         <select
           className="rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
           value={orderBy}
