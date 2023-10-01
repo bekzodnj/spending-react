@@ -1,4 +1,9 @@
-export function IconEdit(props) {
+import { SVGProps } from "react";
+import { JSX } from "react/jsx-runtime";
+
+export function IconEdit(
+  props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>,
+) {
   return (
     <svg
       viewBox="0 0 1024 1024"

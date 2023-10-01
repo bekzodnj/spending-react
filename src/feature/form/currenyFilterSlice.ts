@@ -1,4 +1,4 @@
-import { createSlice, isAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface CurrencyFilterState {
