@@ -8,12 +8,14 @@ export const spendingApi = createApi({
   endpoints: (builder) => ({
     getSpendingsList: builder.query({
       query: (arg) => {
-        const { order = "" } = arg;
+        const { order = "", currency = "" } = arg;
         console.log("order:", order);
         return {
           url: "spendings/",
           params: {
+            // spendings/?order=spent_at&currency=HUF
             order,
+            currency,
           },
         };
       },

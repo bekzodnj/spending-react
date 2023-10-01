@@ -3,10 +3,12 @@ import { configureStore } from "@reduxjs/toolkit";
 // RTKQ specific imports
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { spendingApi } from "../services/spending";
+import currencyFilterReducer from "../feature/form/currenyFilterSlice";
 
 export const store = configureStore({
   reducer: {
     [spendingApi.reducerPath]: spendingApi.reducer,
+    currencyFilterReducer: currencyFilterReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(spendingApi.middleware),
