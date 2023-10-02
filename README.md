@@ -2,7 +2,7 @@
 
 **App Structure:** \
 \
-![Application structure](https://github.com/bekzodnj/xund-app/blob/master/src/assets/App_info.png) 
+![Application structure](https://github.com/bekzodnj/spending-react/blob/main/src/assets/App.png) 
 
 
 ---- Form: \
