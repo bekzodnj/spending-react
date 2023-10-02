@@ -3,8 +3,13 @@ import { configureStore } from "@reduxjs/toolkit";
 // RTKQ specific imports
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { spendingApi } from "../services/spending";
-import currencyFilterReducer from "../feature/form/currenyFilterSlice";
+import currencyFilterReducer from "./currenyFilterSlice";
 
+/**
+ * Store object:
+ * spendingApi definition - fetch responses
+ * currencyFilter - currently selected value of currency
+ */
 export const store = configureStore({
   reducer: {
     [spendingApi.reducerPath]: spendingApi.reducer,

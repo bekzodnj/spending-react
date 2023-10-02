@@ -1,7 +1,8 @@
 import { useGetSpendingsListQuery } from "../../services/spending";
 import { useState } from "react";
-import { CurrencyFilter } from "../form/Filters";
+import { CurrencyFilter } from "../form/CurrencyFilters";
 import { SpendingCard } from "./SpendingCardItem";
+import { ItemSkeleton } from "../../assets/ItemSkeleton";
 import { useSelector } from "react-redux";
 import type { RootState } from "../../app/store";
 
@@ -14,6 +15,12 @@ interface Spending {
   currency: string;
 }
 
+/**
+ * The widget displays list of spenings
+ * @uses selectedCurrency value from Redux store
+ *
+ * @returns List of SpendingCardItems and sorting dropdown
+ */
 export function SpendingsList() {
   const [orderBy, setOrderBy] = useState("-spent_at");
   const selectedCurrency = useSelector(
@@ -29,7 +36,7 @@ export function SpendingsList() {
 
   return (
     <section>
-      <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
+      <div className="mb-4 flex flex-col items-start justify-between gap-2 sm:flex-row">
         <select
           className="rounded-md border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500"
           value={orderBy}
@@ -50,7 +57,7 @@ export function SpendingsList() {
             <>Oh no, there was an error</>
           </p>
         ) : isLoading || isFetching ? (
-          <p>Loading...</p>
+          <ItemSkeleton />
         ) : data ? (
           <>
             {data.map((spending: Spending) => (

@@ -9,6 +9,10 @@ const initialState: CurrencyFilterState = {
   value: "ALL",
 };
 
+/**
+ * Reducer slice for storing currently selected currency value:
+ * e.g ALL || HUF || USD
+ */
 export const currencyFilterSlice = createSlice({
   name: "currencyFilter",
   initialState,

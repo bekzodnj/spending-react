@@ -4,7 +4,7 @@ export function getFormattedTime(dateISOString = ""): string {
   const hours = date.getHours();
   const minutes = date.getMinutes();
 
-  const amOrPm = 12 >= hours ? "PM" : "AM";
+  const amOrPm = 12 >= hours ? "AM" : "PM";
   const formattedHours = hours % 12 || 12;
   const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
 

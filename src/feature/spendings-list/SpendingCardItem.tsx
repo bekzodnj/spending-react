@@ -25,7 +25,10 @@ export function SpendingCard({
 }: ISpending) {
   return (
     <div className="mb-1 mt-2 flex items-center justify-between gap-2 rounded-lg border bg-white p-3 shadow-sm">
-      <div className="flex gap-3" data-attribute="item-description">
+      <div
+        className="flex items-center gap-3"
+        data-attribute="item-description"
+      >
         <div
           data-label="icon"
           className="inline-block self-start rounded-lg bg-[#d1e7fb] p-2 px-4 text-2xl font-normal text-[#307ccc]"
@@ -55,24 +58,24 @@ export function SpendingCard({
         </div>
 
         <div className="flex gap-1">
-          <Button>
+          <ActionButton>
             <IconEdit width="1.2em" height="1.2em" />
-          </Button>
+          </ActionButton>
 
-          <Button
+          <ActionButton
             onClick={() =>
               confirm(`Do you really want to delete ${description}`)
             }
           >
             <IconClose />
-          </Button>
+          </ActionButton>
         </div>
       </div>
     </div>
   );
 }
 
-export function Button(props: {
+export function ActionButton(props: {
   children: ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }) {

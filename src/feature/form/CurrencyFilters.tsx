@@ -1,13 +1,13 @@
-import { updateCurrencyFilter } from "../form/currenyFilterSlice";
+import { updateCurrencyFilter } from "../../app/currenyFilterSlice";
 import type { RootState } from "../../app/store";
 import { useDispatch, useSelector } from "react-redux";
 
 const BTNS = ["ALL", "HUF", "USD"];
 
 /**
- *  This widget handles Currency Filter.
- *  "ALL" || "HUF" || "USD"
- *  The active value is retrieved (will be written) from the redux store
+ *  This widget handles Currency Select Filter buttons.
+ *  e.g "ALL" || "HUF" || "USD"
+ *  @uses updateCurrencyFilter() Redux action
  *
  * @returns Array of Buttons inside the div
  */
@@ -26,8 +26,8 @@ export function CurrencyFilter() {
     <div>
       {BTNS.map((btnName) => (
         <button
-          className={`text-md mb-2 mr-2 rounded-lg bg-white px-5 py-2 hover:bg-blue-100 hover:text-blue-700 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-            btnName === activeBtn ? activeBtnClass : ""
+          className={`text-md mb-2 mr-2 rounded-lg px-5 py-2 hover:bg-blue-100 hover:text-blue-700 focus:z-10 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+            btnName === activeBtn ? activeBtnClass : " bg-white"
           }`}
           key={btnName}
           onClick={() => handleBtnClick(btnName)}
