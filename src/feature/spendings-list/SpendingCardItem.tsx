@@ -24,7 +24,10 @@ export function SpendingCard({
   spending: { description, amount, currency, spent_at },
 }: ISpending) {
   return (
-    <div className="mb-1 mt-2 flex items-center justify-between gap-2 rounded-lg border bg-white p-3 shadow-sm">
+    <div
+      data-testid="spending-item"
+      className="mb-1 mt-2 flex items-center justify-between gap-2 rounded-lg border bg-white p-3 shadow-sm"
+    >
       <div
         className="flex items-center gap-3"
         data-attribute="item-description"
@@ -36,7 +39,7 @@ export function SpendingCard({
           <span>$</span>
         </div>
 
-        <div data-label="spending-info">
+        <div data-testid="spending-info">
           <h2 className="break-words text-xs font-bold text-[#2e2e2e] sm:text-base">
             {description}
           </h2>
