@@ -3,12 +3,7 @@
 **App Structure:** \
 \
 ![Application structure](https://github.com/bekzodnj/xund-app/blob/master/src/assets/App_info.png) 
----- Navbar: \
------- SideNav \
------ Screen: \
------- HeroText \
------- ChatViewHolder: \
--------- ChatBubble 
+
 
 ---- Form: \
 ---- SpendingList: \
